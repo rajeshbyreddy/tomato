@@ -1,8 +1,10 @@
 services:
-  - type: static_site
+  - type: web
     name: tomato-frontend
+    env: static
     buildCommand: npm run build
-    publishPath: dist
+    startCommand: npm run preview
+    staticPublishPath: dist
     envVars:
       - key: VITE_API_URL
         value: https://food-delivery-backend-meux.onrender.com
